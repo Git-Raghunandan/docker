@@ -1,0 +1,169 @@
+
+Unfortunately, I'm unable to access the content of the Medium page directly. However, I can provide you with a list of common **Docker commands** that are typically used in tutorials and articles, like those you might find in Romin Irani's Docker tutorial series.
+
+Here’s a list of useful **Docker commands** that might be covered in such tutorials:
+
+### 1. **Docker Installation**
+   - **Install Docker on Ubuntu**:
+     ```bash
+     sudo apt-get update
+     sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+     sudo apt-get update
+     sudo apt-get install docker-ce
+     ```
+
+### 2. **Basic Docker Commands**
+   - **Check Docker version**:
+     ```bash
+     docker --version
+     ```
+   - **Start Docker service**:
+     ```bash
+     sudo systemctl start docker
+     ```
+   - **Stop Docker service**:
+     ```bash
+     sudo systemctl stop docker
+     ```
+
+### 3. **Managing Docker Images**
+   - **List Docker images**:
+     ```bash
+     docker images
+     ```
+   - **Pull an image from Docker Hub**:
+     ```bash
+     docker pull <image-name>
+     ```
+   - **Remove a Docker image**:
+     ```bash
+     docker rmi <image-id>
+     ```
+   - **Build a Docker image from a Dockerfile**:
+     ```bash
+     docker build -t <image-name> <path-to-dockerfile>
+     ```
+
+### 4. **Managing Docker Containers**
+   - **List running containers**:
+     ```bash
+     docker ps
+     ```
+   - **List all containers (including stopped)**:
+     ```bash
+     docker ps -a
+     ```
+   - **Run a container**:
+     ```bash
+     docker run <options> <image-name>
+     ```
+   - **Stop a running container**:
+     ```bash
+     docker stop <container-id>
+     ```
+   - **Remove a container**:
+     ```bash
+     docker rm <container-id>
+     ```
+   - **Execute command inside a running container**:
+     ```bash
+     docker exec -it <container-id> <command>
+     ```
+   - **Start a stopped container**:
+     ```bash
+     docker start <container-id>
+     ```
+
+### 5. **Managing Docker Networks**
+   - **List networks**:
+     ```bash
+     docker network ls
+     ```
+   - **Create a custom network**:
+     ```bash
+     docker network create <network-name>
+     ```
+   - **Connect a container to a network**:
+     ```bash
+     docker network connect <network-name> <container-id>
+     ```
+   - **Disconnect a container from a network**:
+     ```bash
+     docker network disconnect <network-name> <container-id>
+     ```
+
+### 6. **Docker Volumes**
+   - **List volumes**:
+     ```bash
+     docker volume ls
+     ```
+   - **Create a volume**:
+     ```bash
+     docker volume create <volume-name>
+     ```
+   - **Remove a volume**:
+     ```bash
+     docker volume rm <volume-name>
+     ```
+   - **Mount a volume to a container**:
+     ```bash
+     docker run -v <volume-name>:<container-path> <image-name>
+     ```
+
+### 7. **Docker Compose (for multi-container applications)**
+   - **Install Docker Compose** (if not installed):
+     ```bash
+     sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+     sudo chmod +x /usr/local/bin/docker-compose
+     ```
+   - **Check Docker Compose version**:
+     ```bash
+     docker-compose --version
+     ```
+   - **Start services defined in a docker-compose.yml file**:
+     ```bash
+     docker-compose up
+     ```
+   - **Stop the services**:
+     ```bash
+     docker-compose down
+     ```
+
+### 8. **Docker Logs**
+   - **View logs of a container**:
+     ```bash
+     docker logs <container-id>
+     ```
+   - **Follow logs in real-time**:
+     ```bash
+     docker logs -f <container-id>
+     ```
+
+### 9. **Docker System Commands**
+   - **Prune unused Docker objects (images, containers, volumes)**:
+     ```bash
+     docker system prune
+     ```
+   - **Clean up unused volumes**:
+     ```bash
+     docker volume prune
+     ```
+
+### 10. **Docker Tagging and Pushing to Docker Hub**
+   - **Tag an image**:
+     ```bash
+     docker tag <image-name> <your-dockerhub-username>/<repository>:<tag>
+     ```
+   - **Push an image to Docker Hub**:
+     ```bash
+     docker push <your-dockerhub-username>/<repository>:<tag>
+     ```
+
+---
+
+### Conclusion
+These are the basic Docker commands that are commonly used in Docker tutorials. If you are looking for a specific set of commands from Romin Irani's tutorial, you can visit his Medium page for detailed instructions and specific examples. 
+
+Let me know if you need further explanations or specific examples for any of the commands!
